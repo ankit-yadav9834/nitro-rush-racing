@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: nitro-rush-racing
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build:render
+    startCommand: npm run start:render
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: 24.21.0
